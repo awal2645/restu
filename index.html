@@ -129,6 +129,23 @@
     .mini-shadow{
       box-shadow:0 12px 30px rgba(0,0,0,.08);
     }
+    .signature-dish-card{
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .signature-dish-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 18px 44px rgba(0,0,0,.12);
+    }
+    .signature-dish-img{
+      width:100%;
+      height:16rem;
+      object-fit:cover;
+      object-position:center;
+      filter:brightness(1.08) contrast(1.1) saturate(1.08);
+    }
+    @media (min-width:640px){
+      .signature-dish-img{height:18rem}
+    }
     .phone-block::before{
       content:"";
       position:absolute;
@@ -257,13 +274,13 @@
           </div>
 
           <div class="flex items-center gap-3 justify-start">
-            <div class="brand md:hidden mr-auto text-right text-4xl sm:text-5xl md:text-6xl font-extrabold leading-none">
+            <!-- <div class="brand md:hidden mr-auto text-right text-4xl sm:text-5xl md:text-6xl font-extrabold leading-none">
                 DÌN KÝ
               </div>
             <button class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-black/15 bg-white text-xl mini-shadow">👤</button>
             <button class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-black/15 bg-white text-xl mini-shadow">🖤</button>
             <button class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-black/15 bg-white text-xl mini-shadow">🛒</button>
-          
+           -->
           </div>
         </div>
 
@@ -313,8 +330,8 @@
             <div class="relative hero-mobile-image">
               <div class="absolute -top-6 -left-2 w-16 h-16 bg-amber-300 rounded-full blur-xl opacity-60"></div>
               <img class="w-full max-w-md sm:max-w-lg ml-auto object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.45)]"
-                   src="assets/party-tray-hero.png"
-                   alt="Dìn Ký party tray — size M $25, size L $45; order (346) 439-4063" />
+                   src="assets/din-ky2-logo-transparent.png"
+                   alt="Dìn Ký 2 Vietnamese Restaurant Houston logo" />
             </div>
           </div>
         </section>
@@ -368,10 +385,10 @@
               </div>
               <div class="grid gap-5">
                 <div class="rounded-[34px] overflow-hidden h-[180px] mini-shadow">
-                  <img class="food-cover" src="assets/mien-ga.png" alt="Miến Gà — chicken glass noodle soup, Dìn Ký special" />
+                  <img class="food-cover" src="assets/din-ky2-storefront.png" alt="Dìn Ký 2 Vietnamese Restaurant — storefront on Bellaire Blvd, Houston" />
                 </div>
                 <div class="rounded-[34px] overflow-hidden h-[280px] mini-shadow">
-                  <img class="food-cover" src="assets/hu-tieu-nam-vang.png" alt="Hủ tiếu Nam Vang with shrimp, herbs, quail egg, and shrimp cracker" />
+                  <img class="food-cover" src="assets/din-ky2-dining-interior.png" alt="Dìn Ký 2 dining room — booths, guests, and window view" />
                 </div>
               </div>
             </div>
@@ -406,42 +423,30 @@
               <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8">House Special Dishes</h3>
 
               <div class="menu-line">
-                <div class="flex flex-col sm:flex-row items-start justify-between gap-4">
-                  <div>
-                    <h4 class="text-xl sm:text-2xl md:text-3xl font-extrabold">Mì Đặc Biệt Dìn Ký Hủ Tiếu Triều Châu, Nam Vang Đặc Biệt</h4>
-                    <p class="text-base sm:text-xl md:text-2xl text-neutral-700 mt-2">House Special Noodle</p>
-                  </div>
-                  <div class="text-2xl sm:text-3xl md:text-4xl font-black shrink-0">Chef's</div>
+                <div>
+                  <h4 class="text-xl sm:text-2xl md:text-3xl font-extrabold">Mì Đặc Biệt Dìn Ký Hủ Tiếu Triều Châu, Nam Vang Đặc Biệt</h4>
+                  <p class="text-base sm:text-xl md:text-2xl text-neutral-700 mt-2">House Special Noodle</p>
                 </div>
               </div>
 
               <div class="menu-line">
-                <div class="flex flex-col sm:flex-row items-start justify-between gap-4">
-                  <div>
-                    <h4 class="text-xl sm:text-2xl md:text-3xl font-extrabold">Cơm Chiên Gà Đỏ</h4>
-                    <p class="text-base sm:text-xl md:text-2xl text-neutral-700 mt-2">Chicken Red Fried Rice</p>
-                  </div>
-                  <div class="text-2xl sm:text-3xl md:text-4xl font-black shrink-0">Popular</div>
+                <div>
+                  <h4 class="text-xl sm:text-2xl md:text-3xl font-extrabold">Cơm Chiên Gà Đỏ</h4>
+                  <p class="text-base sm:text-xl md:text-2xl text-neutral-700 mt-2">Chicken Red Fried Rice</p>
                 </div>
               </div>
 
               <div class="menu-line">
-                <div class="flex flex-col sm:flex-row items-start justify-between gap-4">
-                  <div>
-                    <h4 class="text-xl sm:text-2xl md:text-3xl font-extrabold">Cơm Tấm Đặc Biệt Dìn Ký</h4>
-                    <p class="text-base sm:text-xl md:text-2xl text-neutral-700 mt-2">Grilled Pork Chop, Shredded Pork, Egg Cake, Fried Egg with Steam Broken Rice</p>
-                  </div>
-                  <div class="text-2xl sm:text-3xl md:text-4xl font-black shrink-0">House</div>
+                <div>
+                  <h4 class="text-xl sm:text-2xl md:text-3xl font-extrabold">Cơm Tấm Đặc Biệt Dìn Ký</h4>
+                  <p class="text-base sm:text-xl md:text-2xl text-neutral-700 mt-2">Grilled Pork Chop, Shredded Pork, Egg Cake, Fried Egg with Steam Broken Rice</p>
                 </div>
               </div>
 
               <div>
-                <div class="flex flex-col sm:flex-row items-start justify-between gap-4">
-                  <div>
-                    <h4 class="text-xl sm:text-2xl md:text-3xl font-extrabold">Mì Vịt Tiềm</h4>
-                    <p class="text-base sm:text-xl md:text-2xl text-neutral-700 mt-2">Steamed Duck Leg with Egg Noodle</p>
-                  </div>
-                  <div class="text-2xl sm:text-3xl md:text-4xl font-black shrink-0">Best</div>
+                <div>
+                  <h4 class="text-xl sm:text-2xl md:text-3xl font-extrabold">Mì Vịt Tiềm</h4>
+                  <p class="text-base sm:text-xl md:text-2xl text-neutral-700 mt-2">Steamed Duck Leg with Egg Noodle</p>
                 </div>
               </div>
             </div>
@@ -454,40 +459,46 @@
             <h2 class="text-4xl md:text-6xl font-extrabold">Signature Dishes</h2>
           </div>
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white rounded-[28px] overflow-hidden mini-shadow">
-              <img class="w-full h-56 object-cover" src="assets/dry-din-ky-special.png" alt="Dry Din Ky Special" />
+            <div class="signature-dish-card bg-white rounded-[28px] overflow-hidden mini-shadow">
+              <img class="signature-dish-img" src="assets/signature-ca-ri-de.png" alt="Cà Ri Dê — goat curry with bánh mì, Dìn Ký 2 best seller" />
               <div class="p-5">
-                <h3 class="text-2xl font-extrabold">Dry Din Ky Special</h3>
+                <h3 class="text-2xl font-extrabold">Cà Ri Dê</h3>
+                <p class="text-neutral-600 text-sm mt-1 font-medium">Goat curry · best seller</p>
               </div>
             </div>
-            <div class="bg-white rounded-[28px] overflow-hidden mini-shadow">
-              <img class="w-full h-56 object-cover" src="assets/dry-noodles.png" alt="Dry Noodles" />
+            <div class="signature-dish-card bg-white rounded-[28px] overflow-hidden mini-shadow">
+              <img class="signature-dish-img" src="assets/signature-mi-dac-biet-din-ky.png" alt="Mì Đặc Biệt Dìn Ký — special combo noodle bowl, Dìn Ký 2" />
               <div class="p-5">
-                <h3 class="text-2xl font-extrabold">Dry Noodles</h3>
+                <h3 class="text-2xl font-extrabold">Mì Đặc Biệt Dìn Ký</h3>
+                <p class="text-neutral-600 text-sm mt-1 font-medium">Dìn Ký special noodles</p>
               </div>
             </div>
-            <div class="bg-white rounded-[28px] overflow-hidden mini-shadow">
-              <img class="w-full h-56 object-cover" src="assets/banh-khot.png" alt="Banh Khot" />
+            <div class="signature-dish-card bg-white rounded-[28px] overflow-hidden mini-shadow">
+              <img class="signature-dish-img" src="assets/signature-mi-ca-ri.png" alt="Mì Cà Ri — Vietnamese curry noodles with meat, herbs, and peanuts, Dìn Ký 2" />
               <div class="p-5">
-                <h3 class="text-2xl font-extrabold">Banh Khot</h3>
+                <h3 class="text-2xl font-extrabold">Mì Cà Ri</h3>
+                <p class="text-neutral-600 text-sm mt-1 font-medium">Curry noodles</p>
               </div>
             </div>
-            <div class="bg-white rounded-[28px] overflow-hidden mini-shadow">
-              <img class="w-full h-56 object-cover" src="assets/special-egg-noodles.png" alt="Special Egg Noodles" />
+            <div class="signature-dish-card bg-white rounded-[28px] overflow-hidden mini-shadow">
+              <img class="signature-dish-img" src="assets/signature-mi-xao-gion.png" alt="Mì Xào Giòn — crispy egg noodles with seafood and vegetables, Dìn Ký 2" />
               <div class="p-5">
-                <h3 class="text-2xl font-extrabold">Special Egg Noodles</h3>
+                <h3 class="text-2xl font-extrabold">Mì Xào Giòn</h3>
+                <p class="text-neutral-600 text-sm mt-1 font-medium">Crispy stir-fried noodles</p>
               </div>
             </div>
-            <div class="bg-white rounded-[28px] overflow-hidden mini-shadow">
-              <img class="w-full h-56 object-cover" src="assets/rice-cakes.png" alt="Rice Cakes" />
+            <div class="signature-dish-card bg-white rounded-[28px] overflow-hidden mini-shadow">
+              <img class="signature-dish-img" src="assets/signature-banh-khot-mien-nam.png" alt="Bánh Khọt Miền Nam — Southern Vietnamese mini pancakes with shrimp, Dìn Ký 2" />
               <div class="p-5">
-                <h3 class="text-2xl font-extrabold">Rice Cakes</h3>
+                <h3 class="text-2xl font-extrabold">Bánh Khọt Miền Nam</h3>
+                <p class="text-neutral-600 text-sm mt-1 font-medium">Savory mini pancakes</p>
               </div>
             </div>
-            <div class="bg-white rounded-[28px] overflow-hidden mini-shadow">
-              <img class="w-full h-56 object-cover" src="assets/hu-tieu-noodles.png" alt="Hu Tieu Noodles" />
+            <div class="signature-dish-card bg-white rounded-[28px] overflow-hidden mini-shadow">
+              <img class="signature-dish-img" src="assets/signature-mien-ga.png" alt="Miến Gà — chicken glass noodle soup, Dìn Ký special" />
               <div class="p-5">
-                <h3 class="text-2xl font-extrabold">Hu Tieu Noodles</h3>
+                <h3 class="text-2xl font-extrabold">Miến Gà</h3>
+                <p class="text-neutral-600 text-sm mt-1 font-medium">Chicken glass noodle soup</p>
               </div>
             </div>
           </div>
@@ -530,29 +541,6 @@
               <div class="mt-5 flex justify-end">
                 <button class="w-14 h-14 rounded-2xl  text-white text-2xl">🛒</button>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="px-4 md:px-8 lg:px-16 py-20 bg-[#efefef]">
-          <div class="bg-red-500 rounded-[38px] p-8 md:p-12">
-            <div class="grid lg:grid-cols-[330px_1fr] gap-10 items-center">
-              <div class="text-white">
-                <div class="title-script !text-white !text-4xl md:!text-6xl mb-3">Reserve A Table</div>
-                <div class="w-40 h-1 bg-amber-300 mb-6"></div>
-                <p class="text-3xl md:text-4xl font-extrabold leading-tight text-black">Discover Our New Menu!</p>
-              </div>
-
-              <form class="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
-                <input class="soft-input text-xl font-semibold" placeholder="Name" />
-                <input class="soft-input text-xl font-semibold" placeholder="Date  dd-mm-yyyy" />
-                <input class="soft-input text-xl font-semibold" placeholder="Time  --:--" />
-                <input class="soft-input text-xl font-semibold" placeholder="Phone Number" />
-                <input class="soft-input text-xl font-semibold md:col-span-2" placeholder="Number  Only Me" />
-                <div class="xl:col-span-2 flex xl:justify-end">
-                  <button type="button" class="w-full xl:w-auto bg-white text-black pill-btn text-xl md:text-2xl min-w-[180px] md:min-w-[220px]">Book Now</button>
-                </div>
-              </form>
             </div>
           </div>
         </section>
@@ -610,33 +598,6 @@
           </div>
         </section>
 
-        <section class="px-4 md:px-8 lg:px-16 py-20 bg-[#f1f1f1]">
-          <div class="grid lg:grid-cols-[1fr_.95fr] gap-10 items-center relative phone-block">
-            <div class="relative z-10">
-              <div class="title-script mb-4">Restaurant Image</div>
-              <h2 class="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-[0.95] mb-8">Contact Form</h2>
-              <p class="text-xl md:text-2xl text-neutral-800 font-semibold mb-10">
-                Din Ky 2 in Houston, TX, is a well-loved spot for authentic Vietnamese cuisine. Known for its rich, flavorful pho and fresh spring rolls, the restaurant offers a true taste of Vietnam in a casual, welcoming atmosphere. With a focus on fresh ingredients and traditional flavors, Din Ky 2 is the perfect place to enjoy a satisfying, comforting meal.
-              </p>
-              <div class="flex flex-wrap gap-4">
-                <a href="#" class="bg-black text-white rounded-2xl px-6 py-4 w-full sm:w-auto sm:min-w-[240px]">
-                  <div class="text-sm uppercase tracking-wider">Call us</div>
-                  <div class="text-2xl md:text-3xl font-black">(346) 439-4063</div>
-                </a>
-                <a href="#" class="bg-red-500 text-white rounded-2xl px-6 py-4 w-full sm:w-auto sm:min-w-[240px]">
-                  <div class="text-sm uppercase tracking-wider">Visit us</div>
-                  <div class="text-2xl md:text-3xl font-black">Houston, TX</div>
-                </a>
-              </div>
-            </div>
-
-            <div class="relative z-10 text-center">
-              <img class="max-w-[520px] w-full mx-auto drop-shadow-[0_30px_40px_rgba(0,0,0,0.2)]"
-                   src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80"
-                   alt="Mobile app" />
-            </div>
-          </div>
-        </section>
       </main>
 
       <footer id="contact" class="bg-white">
@@ -686,21 +647,14 @@
 
         <div class="footer-yellow px-4 md:px-8 lg:px-16 pt-0 pb-8">
           <div class="flex justify-center gap-5 -translate-y-8">
-            <a href="#" class="social-dot text-red-500 text-4xl font-black">f</a>
+            <a href="https://www.facebook.com/profile.php?id=61571300846513" target="_blank" rel="noopener noreferrer" class="social-dot text-red-500 text-4xl font-black" aria-label="Dìn Ký 2 on Facebook">f</a>
             <a href="#" class="social-dot text-red-500 text-4xl font-black">◎</a>
             <a href="#" class="social-dot text-red-500 text-4xl font-black">𝕏</a>
             <a href="#" class="social-dot text-red-500 text-4xl font-black">▶</a>
           </div>
 
-          <div class="flex flex-col lg:flex-row items-center justify-between gap-6 text-base md:text-xl font-medium">
+          <div class="flex flex-col items-center justify-center gap-6 text-base md:text-xl font-medium text-center">
             <p>Copyright © 2026, Dìn Ký 2. Authentic Vietnamese Cuisine.</p>
-            <div class="flex flex-wrap items-center gap-4">
-              <span class="bg-white px-5 py-2 rounded-lg font-black">PayPal</span>
-              <span class="bg-white px-5 py-2 rounded-lg font-black">MasterCard</span>
-              <span class="bg-white px-5 py-2 rounded-lg font-black">AmEx</span>
-              <span class="bg-white px-5 py-2 rounded-lg font-black">Visa</span>
-              <span class="bg-white px-5 py-2 rounded-lg font-black">COD</span>
-            </div>
           </div>
         </div>
       </footer>

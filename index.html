@@ -42,13 +42,18 @@
       background:
         radial-gradient(circle at 88% 50%, #ff1f2d 0, #ff1f2d 18%, transparent 18.2%),
         linear-gradient(180deg, rgba(0,0,0,.78), rgba(0,0,0,.86)),
-        url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1600&q=80');
+        url('assets/cafe-kem-deo-promo.png');
       background-size:cover;
       background-position:center;
     }
     .glow-card{
       background:rgba(255,255,255,.97);
       box-shadow:0 18px 40px rgba(0,0,0,.12);
+    }
+    .menu-tab:not(.active){
+      background:#fff;
+      color:#111;
+      border-color:#ef4444;
     }
     .menu-tab.active{
       background:var(--yellow);
@@ -216,7 +221,7 @@
       .hero-bg{
         background:
           linear-gradient(180deg, rgba(0,0,0,.8), rgba(0,0,0,.88)),
-          url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80');
+          url('assets/cafe-kem-deo-promo.png');
         background-size:cover;
         background-position:center;
       }
@@ -300,16 +305,16 @@
                 Authentic Vietnamese Cuisine in Houston, TX
               </p>
               <div class="flex flex-col sm:flex-row flex-wrap gap-4">
-                <a href="#menu" class="pill-btn bg-red-500 hover:bg-red-600 text-white text-lg">View Menu</a>
+                <a href="#menu" id="view-menu-btn" class="pill-btn bg-red-500 hover:bg-red-600 text-white text-lg">View Menu</a>
                 <a href="#contact" class="pill-btn bg-white/10 hover:bg-white/20 border border-white/20 text-white text-lg">Contact Us</a>
               </div>
             </div>
 
             <div class="relative hero-mobile-image">
               <div class="absolute -top-6 -left-2 w-16 h-16 bg-amber-300 rounded-full blur-xl opacity-60"></div>
-              <img class="w-full max-w-2xl ml-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.45)]"
-                   src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80"
-                   alt="Pizza" />
+              <img class="w-full max-w-md sm:max-w-lg ml-auto object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.45)]"
+                   src="assets/party-tray-hero.png"
+                   alt="Dìn Ký party tray — size M $25, size L $45; order (346) 439-4063" />
             </div>
           </div>
         </section>
@@ -359,14 +364,14 @@
 
             <div class="grid grid-cols-2 gap-5">
               <div class="rounded-[34px] overflow-hidden h-[380px] mini-shadow">
-                <img class="food-cover" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Coffee" />
+                <img class="food-cover" src="assets/din-ky-restaurant-interior.png" alt="Dìn Ký restaurant interior" />
               </div>
               <div class="grid gap-5">
                 <div class="rounded-[34px] overflow-hidden h-[180px] mini-shadow">
-                  <img class="food-cover" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=900&q=80" alt="Food" />
+                  <img class="food-cover" src="assets/mien-ga.png" alt="Miến Gà — chicken glass noodle soup, Dìn Ký special" />
                 </div>
                 <div class="rounded-[34px] overflow-hidden h-[280px] mini-shadow">
-                  <img class="food-cover" src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=900&q=80" alt="Sushi" />
+                  <img class="food-cover" src="assets/hu-tieu-nam-vang.png" alt="Hủ tiếu Nam Vang with shrimp, herbs, quail egg, and shrimp cracker" />
                 </div>
               </div>
             </div>
@@ -378,19 +383,23 @@
             <div class="title-script">Restaurant Image</div>
           </div>
 
-          <div class="flex flex-wrap items-center justify-center gap-3 mb-14">
-            <button class="menu-tab px-4 sm:px-8 py-3 sm:py-5 rounded-2xl border-2 border-red-500 text-base sm:text-2xl font-extrabold bg-white">🍜 Noodles</button>
-            <button class="menu-tab px-4 sm:px-8 py-3 sm:py-5 rounded-2xl border-2 border-red-500 text-base sm:text-2xl font-extrabold bg-white">☕ Coffee</button>
-            <button class="menu-tab active px-4 sm:px-8 py-3 sm:py-5 rounded-2xl border-2 text-base sm:text-2xl font-extrabold">🍕 Pizza</button>
-            <button class="menu-tab px-4 sm:px-8 py-3 sm:py-5 rounded-2xl border-2 border-red-500 text-base sm:text-2xl font-extrabold bg-white">🍟 French Fries</button>
-            <button class="menu-tab px-4 sm:px-8 py-3 sm:py-5 rounded-2xl border-2 border-red-500 text-base sm:text-2xl font-extrabold bg-white">🍔 Burger</button>
+          <div id="menu-category-tabs" class="flex flex-wrap items-center justify-center gap-3 mb-14" role="tablist" aria-label="Menu category">
+            <button type="button" role="tab" aria-selected="true" class="menu-tab active px-4 sm:px-8 py-3 sm:py-5 rounded-2xl border-2 text-base sm:text-2xl font-extrabold"
+                    data-src="assets/menu-tab-noodles.png"
+                    data-alt="Happy Friday — all noodles $9.99 all day, dine in only, Houston">🍜 Noodles</button>
+            <button type="button" role="tab" aria-selected="false" class="menu-tab px-4 sm:px-8 py-3 sm:py-5 rounded-2xl border-2 text-base sm:text-2xl font-extrabold"
+                    data-src="assets/menu-tab-sea-salt-coffee.png"
+                    data-alt="DK Boba &amp; Coffee — Cafe Kem Dẻo, mua 3 tặng 1">☕ Sea Salt Coffee</button>
+            <button type="button" role="tab" aria-selected="false" class="menu-tab px-4 sm:px-8 py-3 sm:py-5 rounded-2xl border-2 text-base sm:text-2xl font-extrabold"
+                    data-src="assets/menu-tab-rice.png"
+                    data-alt="Cơm Bò Lúc Lắc — shaking beef with rice, Dìn Ký 2">🍚 Rice</button>
           </div>
 
           <div class="grid lg:grid-cols-2 gap-10 items-center">
             <div class="text-center">
-              <img class="mx-auto max-w-[650px] w-full drop-shadow-[0_24px_30px_rgba(0,0,0,0.22)]"
-                   src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80"
-                   alt="Pizza menu" />
+              <img id="menu-category-preview" class="mx-auto w-full max-w-xl lg:max-w-lg xl:max-w-xl rounded-2xl object-cover drop-shadow-[0_24px_30px_rgba(0,0,0,0.22)]"
+                   src="assets/menu-tab-noodles.png"
+                   alt="Happy Friday — all noodles $9.99 all day, dine in only, Houston" />
             </div>
 
             <div>
@@ -492,34 +501,34 @@
           <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div class="bg-white text-black rounded-[34px] p-6 border-2 border-amber-300 mini-shadow">
               <div class="w-14 h-14 rounded-full bg-amber-300 grid place-items-center font-black mb-5">SALE</div>
-              <img class="product-img" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80" alt="Burger" />
-              <h3 class="text-3xl md:text-4xl font-extrabold mt-4 mb-2">Chicken Burger</h3>
+              <img class="product-img" src="assets/happy-friday-promo.png" alt="Happy Friday at Dìn Ký 2 — all noodles $9.99 with free soft drink, dine in only, Houston" />
+              <h3 class="text-3xl md:text-4xl font-extrabold mt-4 mb-2">All Noodles</h3>
               <p class="text-neutral-600 text-lg">In Stock</p>
-              <p class="text-2xl font-black mt-1">Rs. 1,700.00</p>
+              <p class="text-2xl font-black mt-1">$9.99</p>
               <div class="mt-5 flex justify-end">
-                <button class="w-14 h-14 rounded-2xl bg-red-500 text-white text-2xl">🛒</button>
+                <button class="w-14 h-14 rounded-2xl  text-white text-2xl">🛒</button>
               </div>
             </div>
 
             <div class="bg-white text-black rounded-[34px] p-6 border-2 border-amber-300 mini-shadow">
               <div class="w-14 h-14 rounded-full bg-amber-300 grid place-items-center font-black mb-5">SALE</div>
-              <img class="product-img" src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=900&q=80" alt="Cocktail" />
-              <h3 class="text-3xl md:text-4xl font-extrabold mt-4 mb-2">Cocktail</h3>
+              <img class="product-img" src="assets/dk-sea-salt-coffee-promo.png" alt="DK Sea Salt Coffee — buy 3 get 1 free, limited-time offer" />
+              <h3 class="text-3xl md:text-4xl font-extrabold mt-4 mb-2">Dk Sea Salt Coffe</h3>
               <p class="text-neutral-600 text-lg">In Stock</p>
-              <p class="text-2xl font-black mt-1">Rs. 1,700.00</p>
+              <p class="text-2xl font-black mt-1"> </p>
               <div class="mt-5 flex justify-end">
-                <button class="w-14 h-14 rounded-2xl bg-red-500 text-white text-2xl">🛒</button>
+                <button class="w-14 h-14 rounded-2xl  text-white text-2xl">🛒</button>
               </div>
             </div>
 
             <div class="bg-white text-black rounded-[34px] p-6 border-2 border-amber-300 mini-shadow">
               <div class="w-14 h-14 rounded-full bg-amber-300 grid place-items-center font-black mb-5">SALE</div>
-              <img class="product-img" src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=900&q=80" alt="Cupcake" />
-              <h3 class="text-3xl md:text-4xl font-extrabold mt-4 mb-2">Cupcake</h3>
-              <p class="text-neutral-600 text-lg">In Stock</p>
-              <p class="text-2xl font-black mt-1">Rs. 1,700.00</p>
+              <img class="product-img" src="assets/mi-dac-biet-promo.png" alt="Mì Đặc Biệt Dìn Ký — special Vietnamese noodles, delivery (346) 439-4063, order at dinky2.com" />
+              <h3 class="text-3xl md:text-4xl font-extrabold mt-4 mb-2">Mì Đặc Biệt</h3>
+              <p class="text-neutral-600 text-lg">Uber Eats · DoorDash · dinky2.com</p>
+              <p class="text-2xl font-black mt-1">$15.95</p>
               <div class="mt-5 flex justify-end">
-                <button class="w-14 h-14 rounded-2xl bg-red-500 text-white text-2xl">🛒</button>
+                <button class="w-14 h-14 rounded-2xl  text-white text-2xl">🛒</button>
               </div>
             </div>
           </div>
@@ -697,5 +706,75 @@
       </footer>
     </div>
   </div>
+
+  <div id="menu-flyer-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-8 bg-black/80" role="dialog" aria-modal="true" aria-labelledby="menu-flyer-title" aria-hidden="true">
+    <div class="relative max-h-[min(92vh,900px)] w-full max-w-lg flex flex-col items-center gap-4">
+      <button type="button" id="menu-flyer-close" class="absolute -top-1 -right-1 sm:top-0 sm:right-0 z-10 w-11 h-11 rounded-full bg-white text-black text-2xl font-bold leading-none shadow-lg hover:bg-neutral-100" aria-label="Close menu preview">×</button>
+      <h2 id="menu-flyer-title" class="sr-only">Dìn Ký 2 party tray menu</h2>
+      <img src="assets/party-tray-promo.png" alt="Dìn Ký 2 party tray — eight tray options at $25 each; order 346-439-4063 or dinky2.uorder.io" class="max-h-[min(85vh,820px)] w-auto max-w-full object-contain rounded-2xl shadow-2xl ring-2 ring-white/20" />
+      <a href="#menu" id="menu-flyer-to-section" class="pill-btn bg-amber-400 hover:bg-amber-300 text-black text-base font-extrabold">Continue to menu</a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('view-menu-btn');
+      var modal = document.getElementById('menu-flyer-modal');
+      var closeBtn = document.getElementById('menu-flyer-close');
+      var toSection = document.getElementById('menu-flyer-to-section');
+      if (!btn || !modal) return;
+
+      function openModal(e) {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        if (closeBtn) {
+          closeBtn.focus();
+        }
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        btn.focus();
+      }
+
+      btn.addEventListener('click', openModal);
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) closeModal();
+      });
+      if (toSection) toSection.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+      });
+    })();
+
+    (function () {
+      var tablist = document.getElementById('menu-category-tabs');
+      var img = document.getElementById('menu-category-preview');
+      if (!tablist || !img) return;
+
+      var tabs = tablist.querySelectorAll('button[role="tab"]');
+
+      function activateTab(selected) {
+        tabs.forEach(function (tab) {
+          var on = tab === selected;
+          tab.classList.toggle('active', on);
+          tab.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        img.src = selected.getAttribute('data-src') || img.src;
+        img.alt = selected.getAttribute('data-alt') || '';
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          activateTab(tab);
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

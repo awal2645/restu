@@ -122,7 +122,7 @@
       font-weight:800;
     }
     .section-title{
-      font-size:clamp(34px, 5vw, 74px);
+      font-size:4.15rem;
       line-height:1;
       font-weight:800;
     }
@@ -174,6 +174,30 @@
       border-bottom:2px solid rgba(0,0,0,.18);
       padding-bottom:18px;
       margin-bottom:18px;
+    }
+    .menu-preview-frame{
+      width:100%;
+      max-width:40rem;
+      margin-inline:auto;
+      aspect-ratio:1/1;
+      border-radius:1rem;
+      overflow:hidden;
+    }
+    .menu-preview-img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+    }
+    .menu-content-block{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      min-height:100%;
+    }
+    @media (min-width:1024px){
+      .menu-content-block{min-height:32rem}
     }
     .search-wrap{
       display:flex;
@@ -261,29 +285,6 @@
           </div>
         </div>
 
-        <div class="px-4 md:px-8 py-4 md:py-5 flex flex-col xl:flex-row gap-4 xl:items-center xl:justify-between">
-          <div class="brand hidden md:block text-4xl sm:text-5xl md:text-6xl font-extrabold leading-none">
-            DÌN KÝ
-          </div>
-
-          <div class="hidden md:block flex-1 max-w-3xl w-full">
-            <div class="search-wrap mini-shadow">
-              <button class="search-btn">🔍 Search</button>
-              <input class="search-input" placeholder="Enter your keyword...." />
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3 justify-start">
-            <!-- <div class="brand md:hidden mr-auto text-right text-4xl sm:text-5xl md:text-6xl font-extrabold leading-none">
-                DÌN KÝ
-              </div>
-            <button class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-black/15 bg-white text-xl mini-shadow">👤</button>
-            <button class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-black/15 bg-white text-xl mini-shadow">🖤</button>
-            <button class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-black/15 bg-white text-xl mini-shadow">🛒</button>
-           -->
-          </div>
-        </div>
-
         <div class="md:hidden px-4 pt-3 pb-1">
           <div class="search-wrap mini-shadow">
             <button class="search-btn">🔍 Search</button>
@@ -293,21 +294,17 @@
 
         <div class="bg-black text-white">
           <div class="px-4 md:px-8 py-4 flex flex-col xl:flex-row xl:items-center xl:justify-between gap-4">
-            <div class="bg-amber-400 text-black px-4 sm:px-6 py-3 sm:py-5 rounded-lg xl:rounded-tr-2xl font-extrabold flex items-center gap-4 w-full xl:w-auto min-w-0 xl:min-w-[290px]">
-              <span class="text-2xl">☰</span>
-              <span class="text-base sm:text-xl">Shop By Category</span>
-              <span class="ml-auto">▾</span>
-            </div>
+          <img src="assets/DK Logo Transparent.png" alt="Dìn Ký 2 Vietnamese Restaurant Houston logo" class="w-20 h-30" />
             <nav class="hidden md:flex flex-wrap items-center gap-6 lg:gap-10 text-lg font-bold">
               <a href="#home" class="hover:text-amber-300">Home</a>
               <a href="#about" class="hover:text-amber-300">About Us</a>
               <a href="#menu" class="hover:text-amber-300">Menu</a>
-              <a href="#offers" class="hover:text-amber-300">Shop</a>
+              <a href="#offers" class="hover:text-amber-300">Food</a>
               <a href="#contact" class="hover:text-amber-300">Contact</a>
             </nav>
             <div class="hidden md:block text-left xl:text-right">
               <div class="text-white/80 font-semibold">📞 24/7 Support center</div>
-              <div class="text-xl sm:text-2xl md:text-3xl font-black text-amber-300">+1 123-456-6789</div>
+              <div class="text-xl sm:text-2xl md:text-3xl font-black text-amber-300">+1 (346) 439-4063</div>
             </div>
           </div>
         </div>
@@ -330,7 +327,7 @@
             <div class="relative hero-mobile-image">
               <div class="absolute -top-6 -left-2 w-16 h-16 bg-amber-300 rounded-full blur-xl opacity-60"></div>
               <img class="w-full max-w-md sm:max-w-lg ml-auto object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.45)]"
-                   src="assets/din-ky2-logo-transparent.png"
+                  src="assets/DK Logo Transparent.png"
                    alt="Dìn Ký 2 Vietnamese Restaurant Houston logo" />
             </div>
           </div>
@@ -369,8 +366,8 @@
         <section id="about" class="px-4 md:px-8 lg:px-16 py-20 bg-[#f1f1f1]">
           <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center">
             <div>
-              <div class="title-script mb-4">Restaurant Image</div>
-              <h2 class="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-[0.95] mb-6">
+              <div class="title-script mb-4">About Us</div>
+              <h2 class="text-3xl sm:text-5xl md:text-4xl font-extrabold leading-[0.95] mb-6">
                 Come and experience authentic Vietnamese flavors with our delicious dishes!
               </h2>
               <p class="text-lg md:text-xl text-neutral-700 max-w-2xl mb-8">
@@ -402,52 +399,45 @@
 
           <div id="menu-category-tabs" class="flex flex-wrap items-center justify-center gap-3 mb-14" role="tablist" aria-label="Menu category">
             <button type="button" role="tab" aria-selected="true" class="menu-tab active px-4 sm:px-8 py-3 sm:py-5 rounded-2xl border-2 text-base sm:text-2xl font-extrabold"
-                    data-src="assets/menu-tab-noodles.png"
-                    data-alt="Happy Friday — all noodles $9.99 all day, dine in only, Houston">🍜 Noodles</button>
+                    data-src="assets/menu-tab-noodles-special.png"
+                    data-alt="Special Dry Noodles (Mì Khô Đặc Biệt) at Dìn Ký 2"
+                    data-title="Special Dry Noodles (Mì Khô Đặc Biệt)"
+                    data-desc-1="A flavorful bowl of dry noodles tossed in our signature rich and savory sauce, delivering a perfectly balanced taste in every bite. The dish is generously topped with BBQ pork, shrimp, liver, quail eggs, and fresh greens for added texture and freshness."
+                    data-desc-2="Served with a side of hot, comforting broth, this dish brings together savory, slightly sweet, and aromatic flavors - perfect for those who love traditional dry noodles with a more premium, satisfying twist.">🍜 Noodles</button>
             <button type="button" role="tab" aria-selected="false" class="menu-tab px-4 sm:px-8 py-3 sm:py-5 rounded-2xl border-2 text-base sm:text-2xl font-extrabold"
-                    data-src="assets/menu-tab-sea-salt-coffee.png"
-                    data-alt="DK Boba &amp; Coffee — Cafe Kem Dẻo, mua 3 tặng 1">☕ Sea Salt Coffee</button>
+                    data-src="assets/menu-tab-sea-salt-coffee-special.png"
+                    data-alt="DK Sea Salt Coffee at Dìn Ký 2"
+                    data-title="DK Sea Salt Coffee"
+                    data-desc-1="A smooth and bold Vietnamese-style coffee topped with a rich, creamy sea salt foam. The perfect balance of deep roasted coffee and lightly salted cream creates a unique flavor - slightly sweet, slightly salty, and incredibly refreshing."
+                    data-desc-2="Each sip delivers a velvety texture with a satisfying contrast that makes it a must-try signature drink at Dìn Ký.">☕ Sea Salt Coffee</button>
             <button type="button" role="tab" aria-selected="false" class="menu-tab px-4 sm:px-8 py-3 sm:py-5 rounded-2xl border-2 text-base sm:text-2xl font-extrabold"
-                    data-src="assets/menu-tab-rice.png"
-                    data-alt="Cơm Bò Lúc Lắc — shaking beef with rice, Dìn Ký 2">🍚 Rice</button>
+                    data-src="assets/menu-tab-rice-salmon.png"
+                    data-alt="Sizzling Salmon Rice (Cơm Cá Salmon Lúc Lắc) at Dìn Ký 2"
+                    data-title="Sizzling Salmon Rice (Cơm Cá Salmon Lúc Lắc)"
+                    data-desc-1="A flavorful twist on the classic 'lúc lắc' style, featuring tender, bite-sized salmon cubes stir-shaken to perfection. The salmon is lightly seared for a crispy outside while staying juicy and rich inside, then tossed in a savory, slightly sweet house sauce."
+                    data-desc-2="Served over hot steamed rice with fresh vegetables, this dish delivers a perfect balance of buttery salmon, bold seasoning, and comforting textures - simple, satisfying, and full of flavor.">🍚 Rice</button>
           </div>
 
-          <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="grid lg:grid-cols-2 gap-10 items-stretch">
             <div class="text-center">
-              <img id="menu-category-preview" class="mx-auto w-full max-w-xl lg:max-w-lg xl:max-w-xl rounded-2xl object-cover drop-shadow-[0_24px_30px_rgba(0,0,0,0.22)]"
-                   src="assets/menu-tab-noodles.png"
-                   alt="Happy Friday — all noodles $9.99 all day, dine in only, Houston" />
+              <div class="menu-preview-frame drop-shadow-[0_24px_30px_rgba(0,0,0,0.22)]">
+                <img id="menu-category-preview" class="menu-preview-img"
+                     src="assets/menu-tab-noodles-special.png"
+                     alt="Special Dry Noodles (Mì Khô Đặc Biệt) at Dìn Ký 2" />
+              </div>
             </div>
 
-            <div>
+            <div class="menu-content-block">
               <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8">House Special Dishes</h3>
 
-              <div class="menu-line">
-                <div>
-                  <h4 class="text-xl sm:text-2xl md:text-3xl font-extrabold">Mì Đặc Biệt Dìn Ký Hủ Tiếu Triều Châu, Nam Vang Đặc Biệt</h4>
-                  <p class="text-base sm:text-xl md:text-2xl text-neutral-700 mt-2">House Special Noodle</p>
-                </div>
-              </div>
-
-              <div class="menu-line">
-                <div>
-                  <h4 class="text-xl sm:text-2xl md:text-3xl font-extrabold">Cơm Chiên Gà Đỏ</h4>
-                  <p class="text-base sm:text-xl md:text-2xl text-neutral-700 mt-2">Chicken Red Fried Rice</p>
-                </div>
-              </div>
-
-              <div class="menu-line">
-                <div>
-                  <h4 class="text-xl sm:text-2xl md:text-3xl font-extrabold">Cơm Tấm Đặc Biệt Dìn Ký</h4>
-                  <p class="text-base sm:text-xl md:text-2xl text-neutral-700 mt-2">Grilled Pork Chop, Shredded Pork, Egg Cake, Fried Egg with Steam Broken Rice</p>
-                </div>
-              </div>
-
               <div>
-                <div>
-                  <h4 class="text-xl sm:text-2xl md:text-3xl font-extrabold">Mì Vịt Tiềm</h4>
-                  <p class="text-base sm:text-xl md:text-2xl text-neutral-700 mt-2">Steamed Duck Leg with Egg Noodle</p>
-                </div>
+                <h4 id="menu-item-title" class="text-xl sm:text-2xl md:text-3xl font-extrabold">Special Dry Noodles (Mì Khô Đặc Biệt)</h4>
+                <p id="menu-item-desc-1" class="text-base sm:text-xl md:text-2xl text-neutral-700 mt-3">
+                  A flavorful bowl of dry noodles tossed in our signature rich and savory sauce, delivering a perfectly balanced taste in every bite. The dish is generously topped with BBQ pork, shrimp, liver, quail eggs, and fresh greens for added texture and freshness.
+                </p>
+                <p id="menu-item-desc-2" class="text-base sm:text-xl md:text-2xl text-neutral-700 mt-4">
+                  Served with a side of hot, comforting broth, this dish brings together savory, slightly sweet, and aromatic flavors - perfect for those who love traditional dry noodles with a more premium, satisfying twist.
+                </p>
               </div>
             </div>
           </div>
@@ -509,38 +499,18 @@
             <div class="title-script text-amber-300">Weekly Special</div>
           </div>
 
-          <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div class="bg-white text-black rounded-[34px] p-6 border-2 border-amber-300 mini-shadow">
-              <div class="w-14 h-14 rounded-full bg-amber-300 grid place-items-center font-black mb-5">SALE</div>
-              <img class="product-img" src="assets/happy-friday-promo.png" alt="Happy Friday at Dìn Ký 2 — all noodles $9.99 with free soft drink, dine in only, Houston" />
-              <h3 class="text-3xl md:text-4xl font-extrabold mt-4 mb-2">All Noodles</h3>
-              <p class="text-neutral-600 text-lg">In Stock</p>
-              <p class="text-2xl font-black mt-1">$9.99</p>
-              <div class="mt-5 flex justify-end">
-                <button class="w-14 h-14 rounded-2xl  text-white text-2xl">🛒</button>
-              </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            <div class="bg-white rounded-[28px] p-3 border-2 border-amber-300 mini-shadow">
+              <img class="w-full h-auto rounded-[20px] object-cover" src="assets/offer-card-1.png" alt="Dìn Ký 2 offer image 1" />
             </div>
-
-            <div class="bg-white text-black rounded-[34px] p-6 border-2 border-amber-300 mini-shadow">
-              <div class="w-14 h-14 rounded-full bg-amber-300 grid place-items-center font-black mb-5">SALE</div>
-              <img class="product-img" src="assets/dk-sea-salt-coffee-promo.png" alt="DK Sea Salt Coffee — buy 3 get 1 free, limited-time offer" />
-              <h3 class="text-3xl md:text-4xl font-extrabold mt-4 mb-2">Dk Sea Salt Coffe</h3>
-              <p class="text-neutral-600 text-lg">In Stock</p>
-              <p class="text-2xl font-black mt-1"> </p>
-              <div class="mt-5 flex justify-end">
-                <button class="w-14 h-14 rounded-2xl  text-white text-2xl">🛒</button>
-              </div>
+            <div class="bg-white rounded-[28px] p-3 border-2 border-amber-300 mini-shadow">
+              <img class="w-full h-auto rounded-[20px] object-cover" src="assets/offer-card-2.png" alt="Dìn Ký 2 offer image 2" />
             </div>
-
-            <div class="bg-white text-black rounded-[34px] p-6 border-2 border-amber-300 mini-shadow">
-              <div class="w-14 h-14 rounded-full bg-amber-300 grid place-items-center font-black mb-5">SALE</div>
-              <img class="product-img" src="assets/mi-dac-biet-promo.png" alt="Mì Đặc Biệt Dìn Ký — special Vietnamese noodles, delivery (346) 439-4063, order at dinky2.com" />
-              <h3 class="text-3xl md:text-4xl font-extrabold mt-4 mb-2">Mì Đặc Biệt</h3>
-              <p class="text-neutral-600 text-lg">Uber Eats · DoorDash · dinky2.com</p>
-              <p class="text-2xl font-black mt-1">$15.95</p>
-              <div class="mt-5 flex justify-end">
-                <button class="w-14 h-14 rounded-2xl  text-white text-2xl">🛒</button>
-              </div>
+            <div class="bg-white rounded-[28px] p-3 border-2 border-amber-300 mini-shadow">
+              <img class="w-full h-auto rounded-[20px] object-cover" src="assets/offer-card-3.png" alt="Dìn Ký 2 offer image 3" />
+            </div>
+            <div class="bg-white rounded-[28px] p-3 border-2 border-amber-300 mini-shadow">
+              <img class="w-full h-auto rounded-[20px] object-cover" src="assets/offer-card-5.png" alt="Dìn Ký 2 offer image 5" />
             </div>
           </div>
         </section>
@@ -555,39 +525,42 @@
             <div class="grid md:grid-cols-3 gap-8">
               <div class="text-center">
                 <img class="w-36 h-36 rounded-full object-cover mx-auto border-8 border-white"
-                     src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80" alt="Customer 1" />
+                     src="https://s3-media0.fl.yelpcdn.com/photo/gCi-o1r0XEzSqIlE_6yq9A/120s.jpg" alt="Customer 1" />
                 <div class="bg-amber-300 rounded-[999px] p-8 -mt-10 max-w-[320px] mx-auto">
-                  <p class="text-xl font-medium leading-snug">
-                    A good restaurant feels like a small vacation. Great food, kind people and a warm atmosphere every single time.
+                  <p class="text-xl font-medium leading-snug"> <br>
+                    I love and grew up eating hu tieu but I feel like it's pretty rare to find Hu Tieu Trieu Cha.
                   </p>
-                  <h4 class="text-2xl md:text-3xl font-extrabold mt-5">Bratlee Hamint</h4>
+                  <h4 class="text-2xl md:text-3xl font-extrabold mt-5">	
+                    Vicki L.</h4>
                   <div class="text-2xl mt-2">★★★★★</div>
                 </div>
               </div>
 
               <div class="text-center">
                 <img class="w-36 h-36 rounded-full object-cover mx-auto border-8 border-white"
-                     src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=500&q=80" alt="Customer 2" />
+                     src="https://s3-media0.fl.yelpcdn.com/photo/HThRIrZqIqt4sVyx0wq5Zw/120s.jpg" alt="Customer 3" />
                 <div class="bg-amber-300 rounded-[999px] p-8 -mt-10 max-w-[320px] mx-auto">
                   <p class="text-xl font-medium leading-snug">
-                    From the drinks to the desserts, every item feels fresh and thoughtfully prepared. I always leave satisfied.
-                  </p>
-                  <h4 class="text-2xl md:text-3xl font-extrabold mt-5">Sarina Woods</h4>
+                    Đồ ăn ngon, nhân viên nhiệt tình vui tính, mình đã ăn ở đây nhìu lần và thử nhìu món, món nào cũng ok. Thích nhất là hủ tiếu ở đây
+                    <h4 class="text-2xl md:text-3xl font-extrabold mt-5">	
+                    Tuan V.</h4>
                   <div class="text-2xl mt-2">★★★★★</div>
                 </div>
               </div>
 
               <div class="text-center">
                 <img class="w-36 h-36 rounded-full object-cover mx-auto border-8 border-white"
-                     src="https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=500&q=80" alt="Customer 3" />
+                     src="https://s3-media0.fl.yelpcdn.com/photo/kN8ioo5QO2kItp4nOkpseQ/120s.jpg" alt="Customer 2" />
                 <div class="bg-amber-300 rounded-[999px] p-8 -mt-10 max-w-[320px] mx-auto">
                   <p class="text-xl font-medium leading-snug">
-                    Stylish place, fast service and a menu that makes it hard to choose because everything looks amazing.
+                    Din Ký 2 is a Vietnamese restaurant, which originated from Orange County, CA, with a second location in Houston on Bellaire Blvd.
                   </p>
-                  <h4 class="text-2xl md:text-3xl font-extrabold mt-5">Daniel Morris</h4>
+                  <h4 class="text-2xl md:text-3xl font-extrabold mt-5">Krystal L.</h4>
                   <div class="text-2xl mt-2">★★★★★</div>
                 </div>
               </div>
+
+           
             </div>
 
             <div class="flex justify-center gap-3 mt-8">
@@ -709,7 +682,10 @@
     (function () {
       var tablist = document.getElementById('menu-category-tabs');
       var img = document.getElementById('menu-category-preview');
-      if (!tablist || !img) return;
+      var title = document.getElementById('menu-item-title');
+      var desc1 = document.getElementById('menu-item-desc-1');
+      var desc2 = document.getElementById('menu-item-desc-2');
+      if (!tablist || !img || !title || !desc1 || !desc2) return;
 
       var tabs = tablist.querySelectorAll('button[role="tab"]');
 
@@ -721,6 +697,9 @@
         });
         img.src = selected.getAttribute('data-src') || img.src;
         img.alt = selected.getAttribute('data-alt') || '';
+        title.textContent = selected.getAttribute('data-title') || title.textContent;
+        desc1.textContent = selected.getAttribute('data-desc-1') || desc1.textContent;
+        desc2.textContent = selected.getAttribute('data-desc-2') || desc2.textContent;
       }
 
       tabs.forEach(function (tab) {
